@@ -22,9 +22,28 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader'],
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                        
+                    },
+                },
+                "css-loader",
+            ],
+                
             },
-
+            {
+                test: /\.svg$/,
+                use: [
+                    {
+                      loader: "svg-url-loader",
+                      options: {
+                        limit: 10000,
+                      },
+                    },
+                  ],
+            },
         ],
     },
     plugins: [
