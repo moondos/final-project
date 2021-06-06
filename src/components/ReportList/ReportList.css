@@ -1,0 +1,19 @@
+.reportTable {
+    border-collapse: collapse;
+}
+
+.reportTable th {
+	border-width: 2px;
+	border-color: white;
+	border-style: solid;
+	padding: 0.5rem;
+}
+
+.reportTable td {
+	border-width: 0.5px;
+	border-color: white;
+    border-style: solid;
+    padding: 0.5rem;
+}
+
+

@@ -3,7 +3,8 @@ import store from "./store.js";
 
 import { MY_CLIENT_ID } from "./const.js";
 
-const ADD_NEW_REPORT_SUCCESS = "auth/ADD_REPORT";
+const ADD_REPORTS = "report-reducer/ADD_REPORTS";
+const ADD_NEW_REPORT_SUCCESS = "report-reducer/ADD_REPORT";
 
 const initialState = {
     reports: [],
@@ -13,12 +14,20 @@ const initialState = {
 
 const reportReducer = (state = initialState, action) => {
   switch (action.type) {
+    case ADD_REPORTS:
+      // console.log(action.reports)
+      return {
+        ...state,
+        reports: action.reports,
+      };
+
     case ADD_NEW_REPORT_SUCCESS:
       return {
         ...state,
-        repports: [...state.reports, action.report]
+        reports: [...state.reports, action.report]
       };
-    
+            
+      
     default:
       return state;
   }
@@ -26,9 +35,14 @@ const reportReducer = (state = initialState, action) => {
 
 //--------------ACTION CREATORS------------
 
+export const addReports = (reports) => ({
+  type: ADD_REPORTS,
+  reports,
+});
+
 export const addNewReportSuccess = (report) => ({
   type: ADD_NEW_REPORT_SUCCESS,
-  token,
+  report,
 });
 
 //--------------------THUNKS---------------
@@ -80,6 +94,14 @@ export const addNewAuthorizedReport = (reportData) => (dispatch) => {
         dispatch(addNewReportSuccess(res.data));
       }
     })
+    .catch((req) => alert(req.message));
+};
+
+export const getReports = () => (dispatch) => {
+  const token = store.getState().auth.token;
+  casesAPI
+    .getReports(token)
+    .then((res) => dispatch(addReports(res.data)))
     .catch((req) => alert(req.message));
 };
 

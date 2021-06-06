@@ -6,9 +6,7 @@ import "../../index.css";
 
 
 const Report = ({ isAuth, onSubmit}) => {
-    const officers = [{firstName:"Jack", lastName:"Black"}, {firstName:"Dario", lastName:"Otario"}]
-	console.log(officers)
-	return (
+    return (
         <Form 
 			onSubmit={onSubmit}
 			render={({ handleSubmit, form, submitting, pristine }) => (
@@ -69,38 +67,15 @@ const Report = ({ isAuth, onSubmit}) => {
 							</label>
 						</div>
 					</div>
-					{isAuth ? (
-						<div className="string">
-							<label>Ответственный сотрудник:</label>
-              					<Field 
-								  name="officer" 
-								  component="select" 
-								  className="input">
-									<option />
-									{officers.length > 0 ? officers.map((officer) => {
-										// if (officer.approved) {
-											return (
-												<option value={officer._id} key={officer._id}>
-													{officer.firstName} {officer.lastName}
-												</option>
-											);
-										// }
-										
-									}) : ""}
-								</Field>
-						</div>
-
-					): ( "" )}
-
-					<div className="string">
-						<label>Описание: </label>
-						<Field
-							component="textarea"
-							name="description"
-							className="textarea"
-							placeholder="Описание"
-						/>
-					</div>
+					
+					<label>Описание: </label>
+					<Field
+						component="textarea"
+						name="description"
+						className="textarea"
+						placeholder="Описание"
+					/>
+					
 					<div className={"buttons"}>
 						<button
 							className={`${"submit"} button`}

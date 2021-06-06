@@ -9,7 +9,7 @@ import { Main } from './components/Main';
 import UserCreateContainer from './components/UserCreate/UserCreateContainer.jsx';
 import UserAuthContainer from './components/UserAuth/UserAuthContainer.jsx';
 import ReportContainer from './components/Report/ReportContainer.jsx';
-
+import ReportListContainer from './components/ReportList/ReportListContainer.jsx';
 
 export class App extends Component {
     render() {
@@ -23,6 +23,7 @@ export class App extends Component {
                             <Route path="/create" component={UserCreateContainer} exact={true}/>
                             <Route path="/auth" component={UserAuthContainer} exact={true}/>
                             <Route path="/report" component={ReportContainer} exact={true}/>
+                            <Route path="/report-list" component={ReportListContainer} exact={true}/>
                         </Switch>
                     </div>
                 </div>

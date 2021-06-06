@@ -7,15 +7,14 @@ import Report from "./Report.jsx";
 const ReportContainer = ({ isAuth, addNewUnauthorizedReport, addNewAuthorizedReport,  }) => {
     
     const onNewReportSubmit = (formData) => {
-        console.log(formData)
         // isAuth ? addNewAuthorizedReport(formData) : addNewUnauthorizedReport(formData);
+        addNewUnauthorizedReport(formData);
     }
     
     return (
         <Report
             isAuth={isAuth}
             onSubmit={onNewReportSubmit}
-            // officers= {officers}
         />
     )
 };

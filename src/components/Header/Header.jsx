@@ -20,27 +20,21 @@ const Header = ({ auth, signOut }) => {
                 </NavLink>
                 {isAuth && (
                     <div className={"breadcrumbs"}>
-                    <NavLink
-                        to="/report"
-                        className={"link"}
-                        activeClassName={"active"}
-                    >
-                        Новый случай
-                    </NavLink>
-                    <NavLink
-                        to="/stolen-bikes"
-                        className={"link"}
-                        activeClassName={"active"}
-                    >
-                        Украденные велосипеды
-                    </NavLink>
-                    <NavLink
-                        to="/officers"
-                        className={"link"}
-                        activeClassName={"active"}
-                    >
-                        Ответственные сотрудники
-                    </NavLink>
+                        <NavLink
+                            to="/report"
+                            className={"link"}
+                            activeClassName={"active"}
+                        >
+                            Новый случай
+                        </NavLink>
+                        <NavLink
+                            to="/report-list"
+                            className={"link"}
+                            activeClassName={"active"}
+                        >
+                            Украденные велосипеды
+                        </NavLink>
+                    
                     </div>
                 )}
 

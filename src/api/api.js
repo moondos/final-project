@@ -35,4 +35,9 @@ export const casesAPI = {
       .post(`/public/cases`, newReport)
       .then((response) => response);
   },
+  getReports(token) {
+    return instance(token)
+      .get(`/cases`)
+      .then((response) => response);
+  },
 }
