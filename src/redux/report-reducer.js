@@ -15,7 +15,6 @@ const initialState = {
 const reportReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_REPORTS:
-      // console.log(action.reports)
       return {
         ...state,
         reports: action.reports,
